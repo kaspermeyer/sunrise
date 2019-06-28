@@ -1,9 +1,9 @@
 require "test_helper"
 
-class DslTest < Sunrise::TestCase
+class Week1Test < Sunrise::TestCase
   include Sunrise::Helper
 
-  test "basic markup" do
+  test "empty element" do
     output = html do
       div
     end
@@ -21,7 +21,7 @@ class DslTest < Sunrise::TestCase
     assert_equal '<div>Cool text</div>', output
   end
 
-  test "attributes" do
+  test "element with attributes" do
     output = html do
       a href: 'http://google.com', class: 'underline bold' do
         text 'Cool link!'
