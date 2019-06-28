@@ -1,7 +1,7 @@
 module Sunrise
   module Helper
     def html &block
-      # Implement me!
+      Builder.new(&block).to_html
     end
   end
 end
