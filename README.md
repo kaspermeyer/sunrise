@@ -25,6 +25,8 @@ end
 
 Vi starter i det små, og bygger lidt oven på, uge for uge.
 
+Oprindeligt var der en noget længere introduktion. Hvis man vil læse den igen, findes den [her](INTRODUCTION.md).
+
 Håber at I har lyst til at give det et skud! 🙂 Happy coding ⌨️
 
 ## Ugentlige challenges
