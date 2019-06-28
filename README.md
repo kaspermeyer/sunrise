@@ -1,6 +1,6 @@
 # Code challenge: Byg et lille DSL til at skrive HTML i Ruby
 
-Når vi om mange uger er færdige vil man kunne lave virkelig omfattende markup i stil med:
+Når vi om mange uger er færdige vil man kunne lave omfattende markup i stil med:
 
 ```ruby
 html do
