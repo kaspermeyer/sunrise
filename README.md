@@ -4,19 +4,20 @@ Når vi om mange uger er færdige vil man kunne lave omfattende markup i stil me
 
 ```ruby
 html do
-  button class: 'btn btn-primary', data: {action: 'click->modal#open'}
+  button 'Open modal', class: 'btn btn-primary', data: {action: 'click->modal#open'}
 
-  div class: 'modal fade', data: {target: 'modal.modal', modal_form_url: user_path(user)} do
+  div class: 'modal fade', data: {target: 'modal.modal', modal_form_url: users_path} do
     h5 'Edit user', class: 'modal-title'
     div class: 'modal-content' do
       form do
         input type: 'text', name: 'fullname'
-        textarea row: 50, cols: 50, data: {behavior: 'autogrowing-textarea'}
+        input type: 'hidden', name: 'bio', id: 'trix'
+        tag :trix_editor, input: 'trix'
       end
     end
     div class: 'modal-footer' do
-      button 'Close', class: 'btn btn-secondary', data: {action: 'click->modal#close'}
-      button 'Close', class: 'btn btn-primary', data: {action: 'click->modal#save'}
+      button 'Close', class: ['btn', 'btn-secondary'], data: {action: 'click->modal#close'}
+      button 'Save', class: ['btn', 'btn-primary'], data: {action: 'click->modal#save'}
     end
   end
 end
