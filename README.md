@@ -36,7 +36,7 @@ Håber at I har lyst til at give det et skud! 🙂 Happy coding ⌨️
 
 ## Ugentlige challenges
 
-- [x] Week 1: Nested elements and attributes
+- [ ] Week 1: Nested elements and attributes
 - [ ] Week 2: TBA
 
 ## Guidelines
