@@ -8,7 +8,7 @@ class FinalTest < Sunrise::TestCase
   end
 
   test "complete set of language features" do
-    expected_output = <<~HEREDOC
+    expected_output = <<~HTML
       <button class="btn btn-primary" data-action="click->modal#open">
         Open modal
       </button>
@@ -27,7 +27,7 @@ class FinalTest < Sunrise::TestCase
           <button class="btn btn-primary" data-action="click->modal#save">Save</button>
         </div>
       </div>
-    HEREDOC
+    HTML
 
     output = html do
       button 'Open modal', class: 'btn btn-primary', data: {action: 'click->modal#open'}
