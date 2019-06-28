@@ -21,6 +21,7 @@ class FinalTest < Sunrise::TestCase
             <input type="hidden" name="bio" id="trix">
             <trix-editor input="trix"></trix-editor>
           </form>
+          <blog-post v-for="post in posts" v-bind:key="post.id"></blog-post>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" data-action="click->modal#close">Close</button>
@@ -40,6 +41,7 @@ class FinalTest < Sunrise::TestCase
             input type: 'hidden', name: 'bio', id: 'trix'
             tag :trix_editor, input: 'trix'
           end
+          tag :blog_post, 'v-for' => 'comment in comments', 'v-bind:key' => 'comment.id'
         end
         div class: 'modal-footer' do
           button 'Close', class: ['btn', 'btn-secondary'], data: {action: 'click->modal#close'}
