@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["All the cool people at traels.it"]
   spec.email         = ["whatever@traels.it"]
 
-  spec.summary       = "Write HTML in Ruby with a straight-forward DSL"
+  spec.summary       = "Code challenge: Build a tiny DSL for writing HTML in Ruby"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
