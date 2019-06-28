@@ -6,7 +6,7 @@ Når vi er færdige med projektet vil man kunne lave omfattende markup i stil me
 html do
   button 'Open modal', class: 'btn btn-primary', data: {action: 'click->modal#open'}
 
-  div class: 'modal fade', data: {target: 'modal.modal', modal_form_url: users_path} do
+  div class: 'modal fade', data: {target: 'modal.modal', modal: {form_url: users_path}} do
     h5 'Edit user', class: 'modal-title'
     div class: 'modal-content' do
       form do
