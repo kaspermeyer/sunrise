@@ -12,7 +12,7 @@ class Week1Test < Sunrise::TestCase
       div
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "element with text content" do
@@ -26,7 +26,7 @@ class Week1Test < Sunrise::TestCase
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "element with attributes" do
@@ -42,7 +42,7 @@ class Week1Test < Sunrise::TestCase
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "nested elements" do
@@ -66,6 +66,6 @@ class Week1Test < Sunrise::TestCase
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 end
