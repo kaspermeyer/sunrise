@@ -1,6 +1,6 @@
 module Sunrise
   class Builder
-    TAGS = %i[div span a].freeze
+    TAGS = %i[div span a button].freeze
 
     def initialize &block
       @content = block
@@ -11,11 +11,10 @@ module Sunrise
     end
 
     def method_missing name, *args, &block
-      if TAGS.include?(name)
-        "<#{name}#{format_attributes(*args)}>#{instance_exec(&block) if block_given?}</#{name}>"
-      else
-        super
-      end
+      attributes = format_attributes extract_options!(args)
+      content    = args.first || instance_exec(&(block || -> {}))
+
+      TAGS.include?(name) ? "<#{name}#{attributes}>#{content}</#{name}>" : super
     end
 
     def respond_to? name
@@ -24,8 +23,8 @@ module Sunrise
 
     private
 
-      def text content
-        content
+      def text content = nil, &block
+        content or instance_exec(&block)
       end
 
       def format_attributes attributes = {}
@@ -33,6 +32,10 @@ module Sunrise
         formatted     = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(" ")
 
         "#{leading_space}#{formatted}"
+      end
+
+      def extract_options! options
+        options[-1].is_a?(::Hash) ? options.pop : {}
       end
   end
 end
