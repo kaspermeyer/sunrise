@@ -14,6 +14,7 @@ html do
         input type: 'hidden', name: 'bio', id: 'trix'
         tag :trix_editor, input: 'trix'
       end
+      tag :blog_post, 'v-for' => 'comment in comments', 'v-bind:key' => 'comment.id'
     end
     div class: 'modal-footer' do
       button 'Close', class: ['btn', 'btn-secondary'], data: {action: 'click->modal#close'}
