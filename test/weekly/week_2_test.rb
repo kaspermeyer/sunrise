@@ -12,7 +12,7 @@ class Week2Test < Sunrise::TestCase
       button "Press me!", class: "btn btn-primary"
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "inline content ignores block content" do
@@ -26,7 +26,7 @@ class Week2Test < Sunrise::TestCase
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "element without inline content or block content" do
@@ -38,7 +38,7 @@ class Week2Test < Sunrise::TestCase
       button class: "btn btn-primary"
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "text content with a block" do
@@ -52,6 +52,6 @@ class Week2Test < Sunrise::TestCase
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 end
