@@ -1,4 +1,4 @@
-# Code challenge: Byg et lille DSL til at skrive HTML i Ruby
+# Code challenge: Byg et DSL til at skrive HTML i Ruby
 
 Når vi er færdige med projektet vil man kunne lave omfattende markup i stil med:
 
@@ -33,8 +33,9 @@ Håber at I har lyst til at give det et skud! 🙂 Happy coding ⌨️
 ## Ugentlige challenges
 Hver uge lægger jeg flere tests i `test/weekly/` som stiller nye krav til vores gem.
 
-- [ ] Week 1: Nested elements and attributes
-- [ ] Week 2: TBA
+- [x] Week 1: Nested elements and attributes
+- [ ] Week 2: Inline content and block-level text content
+- [ ] Week 3: TBA
 
 ## Guidelines
 

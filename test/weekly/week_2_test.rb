@@ -15,7 +15,7 @@ class Week2Test < Sunrise::TestCase
     assert_equal_html expected_output, output
   end
 
-  test "inline content ignores block content" do
+  test "inline content takes precedence over block content" do
     expected_output = <<~HTML
       <button class="btn btn-primary">Press me!</button>
     HTML
