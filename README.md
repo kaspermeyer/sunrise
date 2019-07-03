@@ -1,4 +1,4 @@
-# Code challenge: Byg et lille DSL til at skrive HTML i Ruby
+# Code challenge: Byg et DSL til at skrive HTML i Ruby
 
 Når vi er færdige med projektet vil man kunne lave omfattende markup i stil med:
 
