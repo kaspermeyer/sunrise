@@ -10,16 +10,17 @@ module Sunrise
       instance_exec(&@content)
     end
 
-    def method_missing name, *args, &block
-      if TAGS.include?(name)
-        "<#{name}#{format_attributes(*args)}>#{instance_exec(&block) if block_given?}</#{name}>"
-      else
-        super
-      end
+    def method_missing tag, *args, &block
+      return super unless TAGS.include?(tag)
+
+      attributes = format_attributes(*args)
+      content    = instance_exec(&block) if block_given?
+
+      "<#{tag}#{attributes}>#{content}</#{tag}>"
     end
 
-    def respond_to? name
-      TAGS.include?(name) ? true : super
+    def respond_to? tag
+      TAGS.include?(tag) ? true : super
     end
 
     private
