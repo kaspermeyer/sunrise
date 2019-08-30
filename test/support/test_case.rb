@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Sunrise
   class TestCase < MiniTest::Test
     class << self
