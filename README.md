@@ -34,8 +34,9 @@ Håber at I har lyst til at give det et skud! 🙂 Happy coding ⌨️
 Hver uge lægger jeg flere tests i `test/weekly/` som stiller nye krav til vores gem.
 
 - [x] Week 1: Nested elements and attributes
-- [ ] Week 2: Inline content and block-level text content
-- [ ] Week 3: TBA
+- [x] Week 2: Inline content and block-level text content
+- [ ] Week 3: Multiple root level elements and siblings
+- [ ] Week 4: TBA
 
 ## Guidelines
 
