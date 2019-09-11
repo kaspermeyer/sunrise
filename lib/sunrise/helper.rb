@@ -16,9 +16,15 @@ module Sunrise
       end
     end
 
+    %i[button].each do |function_word|
+      define_method(function_word) do |*arg, &block|
+        return "<#{function_word} #{hash_html(arg.pop)}>#{arg.first || (block.nil? ? '' : block.call)}</#{function_word}>"
+      end
+    end
+
     %i[text].each do |function_word|
-      define_method(function_word) do |arg|
-        return arg.to_s
+      define_method(function_word) do |*arg, &block|
+        return arg.first.to_s + (block.nil? ? "" : block.call).to_s
       end
     end
 
