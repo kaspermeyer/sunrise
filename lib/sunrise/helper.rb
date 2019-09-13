@@ -3,7 +3,7 @@
 module Sunrise
   module Helper
     def html &block
-      Builder.new(&block).to_html
+      NodeBuilder.new(&block).build.to_html
     end
   end
 end
