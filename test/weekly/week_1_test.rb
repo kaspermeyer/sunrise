@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class Week1Test < Sunrise::TestCase
@@ -12,7 +14,7 @@ class Week1Test < Sunrise::TestCase
       div
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "element with text content" do
@@ -22,11 +24,11 @@ class Week1Test < Sunrise::TestCase
 
     output = html do
       div do
-        text 'Cool text'
+        text "Cool text"
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "element with attributes" do
@@ -37,12 +39,12 @@ class Week1Test < Sunrise::TestCase
     HTML
 
     output = html do
-      a href: 'http://google.com', class: 'underline bold' do
-        text 'Cool link!'
+      a href: "http://google.com", class: "underline bold" do
+        text "Cool link!"
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 
   test "nested elements" do
@@ -59,13 +61,13 @@ class Week1Test < Sunrise::TestCase
     output = html do
       div do
         span do
-          a href: 'http://google.com' do
-            text 'A link to google'
+          a href: "http://google.com" do
+            text "A link to google"
           end
         end
       end
     end
 
-    assert_equal squish_html_string(expected_output), output
+    assert_equal_html expected_output, output
   end
 end
