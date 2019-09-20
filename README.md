@@ -35,8 +35,9 @@ Hver uge lægger jeg flere tests i `test/weekly/` som stiller nye krav til vores
 
 - [x] Week 1: Nested elements and attributes
 - [x] Week 2: Inline content and block-level text content
-- [ ] Week 3: Multiple root level elements and siblings
-- [ ] Week 4: TBA
+- [x] Week 3: Multiple root level elements and siblings
+- [x] Week 4: Self-closing (void) elements
+- [ ] Week 5: TBA
 
 ## Guidelines
 
