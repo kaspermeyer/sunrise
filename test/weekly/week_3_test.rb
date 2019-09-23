@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class Week3est < Sunrise::TestCase
+class Week3Test < Sunrise::TestCase
   include Sunrise::Helper
 
   test "multiple root level elements" do
