@@ -2,10 +2,7 @@
 
 module Sunrise
   module Node
-    class Void
-      include Mixins::HasAttributes
-      include Mixins::HasFakeChildren
-
+    class Void < Base
       attr_reader :tag, :attributes
 
       def initialize tag, attributes = {}

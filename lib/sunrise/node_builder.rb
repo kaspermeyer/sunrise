@@ -19,7 +19,7 @@ module Sunrise
     def method_missing tag, *options, &block
       attributes = extract_options_from(options)
       content    = options.first
-      child      = Node::Element.new(tag, attributes)
+      child      = NodeFactory.create(tag, attributes)
 
       NodeBuilder.new(child, content, &block).build
 

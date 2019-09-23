@@ -2,9 +2,7 @@
 
 module Sunrise
   module Node
-    class Element
-      include Mixins::HasChildren
-
+    class Element < Base
       attr_reader :tag, :attributes
 
       def initialize tag, attributes = {}
@@ -20,13 +18,6 @@ module Sunrise
 
       def formatted_content
         children.map(&:to_html).join
-      end
-
-      def formatted_attributes
-        leading_space = attributes.empty? ? "" : " "
-        formatted     = attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(" ")
-
-        "#{leading_space}#{formatted}"
       end
     end
   end

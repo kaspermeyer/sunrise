@@ -2,9 +2,7 @@
 
 module Sunrise
   module Node
-    class Root
-      include Mixins::HasChildren
-
+    class Root < Base
       def to_html
         children.map(&:to_html).join
       end

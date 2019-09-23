@@ -2,7 +2,7 @@
 
 module Sunrise
   module Node
-    class Text
+    class Text < Base
       attr_writer :text
 
       def initialize text = nil
