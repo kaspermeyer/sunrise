@@ -17,13 +17,7 @@ module Sunrise
     end
 
     def method_missing tag, *options, &block
-      attributes = extract_options_from(options)
-      content    = options.first
-      child      = NodeFactory.create(tag, attributes)
-
-      NodeBuilder.new(child, content, &block).build
-
-      node.add_child(child)
+      create_and_attach_node NodeFactory, tag, *options, &block
     end
 
     private
@@ -33,27 +27,25 @@ module Sunrise
     end
 
     def tag name, *options, &block
-      attributes = extract_options_from(options)
-      content    = options.first
-      child      = Node::Element.new(name, attributes)
-
-      NodeBuilder.new(child, content, &block).build
-
-      node.add_child(child)
+      create_and_attach_node Node::Element, name, *options, &block
     end
 
     def void name, *options, &block
-      attributes = extract_options_from(options)
-      content    = options.first
-      child      = Node::Void.new(name, attributes)
-
-      NodeBuilder.new(child, content, &block).build
-
-      node.add_child(child)
+      create_and_attach_node Node::Void, name, *options, &block
     end
 
     def extract_options_from options
       options[-1].is_a?(Hash) ? options.pop : {}
+    end
+
+    def create_and_attach_node factory, name, *options, &block
+      attributes = extract_options_from(options)
+      content    = options.first
+      child      = factory.create(name, attributes)
+
+      NodeBuilder.new(child, content, &block).build
+
+      node.add_child(child)
     end
   end
 end
