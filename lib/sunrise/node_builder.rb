@@ -32,6 +32,26 @@ module Sunrise
       node.add_child Node::Text.new(literal || block.call)
     end
 
+    def tag name, *options, &block
+      attributes = extract_options_from(options)
+      content    = options.first
+      child      = Node::Element.new(name, attributes)
+
+      NodeBuilder.new(child, content, &block).build
+
+      node.add_child(child)
+    end
+
+    def void name, *options, &block
+      attributes = extract_options_from(options)
+      content    = options.first
+      child      = Node::Void.new(name, attributes)
+
+      NodeBuilder.new(child, content, &block).build
+
+      node.add_child(child)
+    end
+
     def extract_options_from options
       options[-1].is_a?(Hash) ? options.pop : {}
     end

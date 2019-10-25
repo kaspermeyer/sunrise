@@ -6,14 +6,15 @@ module Sunrise
       :a,
       :button,
       :div,
-      :span
+      :span,
+      :h1
     ].freeze
 
     VOID_TAGS = [
       :input,
       :img,
       :br,
-      :hr
+      :hr,
     ].freeze
 
     TAG_MAPPER = {
