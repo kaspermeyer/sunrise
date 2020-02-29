@@ -14,7 +14,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    rake (10.5.0)
+    rake (13.0.1)
     ruby-progressbar (1.10.1)
 
 PLATFORMS
@@ -24,7 +24,7 @@ DEPENDENCIES
   bundler (~> 2.0)
   minitest (~> 5.0)
   minitest-reporters (~> 1.1)
-  rake (~> 10.0)
+  rake (~> 13.0)
   sunrise!
 
 BUNDLED WITH
